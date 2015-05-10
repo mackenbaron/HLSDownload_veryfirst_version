@@ -1,1 +1,1 @@
-The project depends on openssl, please modify include and library directory in project property.
+The HLSDownload project depends on openssl, please modify include and library directory in project property.
