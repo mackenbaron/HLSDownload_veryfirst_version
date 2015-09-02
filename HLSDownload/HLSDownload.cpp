@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
 
             sprintf(pathBuffer, "/%s/%s.m3u8", parameterCat, parameterCat);
 
-#ifdef DEBUG
+#ifdef _DEBUG
             printf("%s\n", pathBuffer);
 #endif
 
@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
             }
 
             sprintf(pathBuffer, "http://videotts.it211.com.cn/%s/%s-", parameterCat, parameterCat);
-#ifdef DEBUG
+#ifdef _DEBUG
             printf("%s\n", pathBuffer);
 #endif
 
@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
             getTotalNumber(receiveBuffer, fileSize, &totalNumber, (unsigned char*)pathBuffer, strlen(pathBuffer));
             encrypted = (NULL != myFind(receiveBuffer, fileSize, (unsigned char*)"AES", strlen("SEA")));
 
-#ifdef DEBUG
+#ifdef _DEBUG
             sprintf(pathBuffer, "./%s/%s.m3u8", parameterCat,parameterCat);
             FILE* fp = fopen(pathBuffer, "wb");
             if(NULL == fp)
@@ -109,14 +109,14 @@ int main(int argc, char* argv[])
                 exit(-1);
             }
             fclose(fp);
-#endif //debug
+#endif //_DEBUG
 
             delete[] receiveBuffer;
 
-#ifdef DEBUG
+#ifdef _DEBUG
             cout << "m3u8 size:" << totalNumber << endl;
             cout << "encrypted?:" << boolalpha << encrypted << endl;
-#endif //debug
+#endif //_DEBUG
 
             if(encrypted)
             {
@@ -128,7 +128,7 @@ int main(int argc, char* argv[])
                     printf("%s\n", pathBuffer);
                     exit(-1);
                 }
-#ifdef DEBUG
+#ifdef _DEBUG
                 cout << "key transfered size:" << fileSize << endl;
 #endif
                 memcpy(key, receiveBuffer, 16);
@@ -138,7 +138,7 @@ int main(int argc, char* argv[])
             for(size_t i = 1; i <= totalNumber; ++i)
             {
                 sprintf(pathBuffer, "/%s/%s-%u.ts", parameterCat, parameterCat, i);
-#ifdef DEBUG
+#ifdef _DEBUG
                 printf("%s\n", pathBuffer);
 #endif
                 receiveBuffer = download(serverName, pathBuffer, referer, acceptTypes, &fileSize);
@@ -238,7 +238,7 @@ int main(int argc, char* argv[])
             {
                 printf("%s merge error\n", parameterCat);
             }
-#ifndef DEBUG
+#ifndef _DEBUG
             Sleep(1000);
             DeleteDirectory(parameterCat);
 #endif
