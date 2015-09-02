@@ -96,7 +96,7 @@ int main(int argc, char* argv[])
             encrypted = (NULL != myFind(receiveBuffer, fileSize, (unsigned char*)"AES", strlen("SEA")));
 
 #ifdef _DEBUG
-            sprintf(pathBuffer, "./%s/%s.m3u8", parameterCat,parameterCat);
+            sprintf(pathBuffer, "./%s/%s.m3u8", parameterCat, parameterCat);
             FILE* fp = fopen(pathBuffer, "wb");
             if(NULL == fp)
             {
@@ -250,7 +250,8 @@ int main(int argc, char* argv[])
     delete[] mkvmergecommandbuff;
     delete[] pathBuffer;
     delete[] parameterCat;
-    return 0;
+
+    system("pause");
 
     return 0;
 }
