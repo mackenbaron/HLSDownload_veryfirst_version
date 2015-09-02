@@ -69,7 +69,7 @@ char* memcat(char* dst, const size_t dstsize, const char* src, const size_t srcs
 
 unsigned char* download(const char* serverName, char* strObject, char* referer, LPCSTR* acceptTypes, size_t* size)
 {
-    HINTERNET hSession = InternetOpenA("Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:16.0) Gecko/20100101 Firefox/16.0", INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, INTERNET_FLAG_DONT_CACHE);
+    HINTERNET hSession = InternetOpenA("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:15.0) Gecko/20100101 Firefox/15.0", INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, INTERNET_FLAG_DONT_CACHE);
     if(NULL == hSession)
     {
         cout << __FILE__ << ' ' << __LINE__ << ':' << GetLastError() << endl;
