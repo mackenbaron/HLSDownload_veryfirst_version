@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
     char noglgbal[] = "\"--no-global-tags\" ";
     char nochapter[] = "\"--no-chapters\" ";
     char serverName[] = "videotts.it211.com.cn";
-    char referer[] = "http://tts7.tarena.com.cn/scripts/bofang/StrobeMediaPlayback.swf";
+    char referer[] = "http://tts8.tmooc.cn/scripts/bofang/bofang/StrobeMediaPlayback.swf";
     LPCSTR acceptTypes[] = {"*/*", NULL};
     size_t fileSize;
     size_t totalNumber;
